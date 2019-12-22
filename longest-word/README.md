@@ -19,7 +19,7 @@ In this activity you will be writing code to create a function that takes a stri
     - The following string should be returned:
 
     ```js
-    "programming
+    programming
     ```
 
 - You can check to see if your function works properly by opening [Unsolved/test.html](Unsolved/test.html) in your web browser.
