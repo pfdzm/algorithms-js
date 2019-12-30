@@ -1,23 +1,13 @@
 // Write code to create a function that accepts a number (`n`) and returns a new number that satisfies the look-and-say-sequence
 
 const lookAndSay = function(n) {
-  const regex = /[0-9]/g;
-  const numbers = n.toString().match(regex);
-  let result = "";
-  for (let i = 9; i >= 0; i--) {
-    result += counter(numbers, i);
-  }
-  return result;
+  const regex = /([0-9])\1*/g;
+  const numbers = n.toString().replace(regex, repetitions);
+  return parseInt(numbers);
 };
 
-const counter = function(arr, number) {
-  let res = 0;
-  for (let i = 0; i < arr.length; i++) {
-    const digit = arr[i];
-    if (digit == number) {
-      res = res + 1;
-    }
-  }
-  return res === 0 ? `` : `${res}${number}`;
+const repetitions = function(match, p1) {
+  return match.length.toString() + p1;
 };
+
 console.log(lookAndSay(10090919));
